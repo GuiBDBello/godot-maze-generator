@@ -1,15 +1,14 @@
 extends Node3D
 
-
 @onready var back_wall = $"Back Wall"
 @onready var front_wall = $"Front Wall"
 @onready var left_wall = $"Left Wall"
 @onready var right_wall = $"Right Wall"
 
-var isVisited = false
+var is_visited = false
 
 func visit():
-	isVisited = true
+	is_visited = true
 
 func clear_back_wall():
 	back_wall.queue_free()

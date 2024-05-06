@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://b5ptabdfgohvv"]
+[gd_scene load_steps=2 format=3 uid="uid://b5ptabdfgohvv"]
+
+[ext_resource type="PackedScene" uid="uid://gjtn7bm2cbge" path="res://scenes/maze_generator.tscn" id="1_6mc2g"]
 
 [node name="Game" type="Node"]
+
+[node name="Maze Generator" parent="." instance=ExtResource("1_6mc2g")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 32.8948, -0.0257001)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.78079, 0.493362, -0.383354, 0, 0.613569, 0.789641, 0.624793, -0.616544, 0.479069, -3.03353, 4.82555, 3.61548)
