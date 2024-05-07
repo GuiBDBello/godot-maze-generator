@@ -3,6 +3,8 @@ extends Node3D
 const MAZE_CELL = preload("res://scenes/maze_cell.tscn")
 
 var maze_grid = []
+var generate_slowly = true
+
 @export var maze_width = 5
 @export var maze_depth = 5
 
@@ -21,8 +23,9 @@ func _ready():
 func generate_maze(previous_cell, current_cell):
 	current_cell.visit()
 	clear_walls(previous_cell, current_cell)
-
-	await get_tree().create_timer(0.05).timeout
+	
+	if generate_slowly:
+		await get_tree().create_timer(0.002).timeout
 	
 	var next_cell = get_next_unvisited_cell(current_cell)
 	while next_cell != null:
