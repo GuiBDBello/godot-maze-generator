@@ -1,22 +1,27 @@
 extends Node
 
-@onready var maze_generator = $"Maze Generator"
 @onready var camera = $Camera
 
-var width
-var depth
 
 func _ready():
-	width = maze_generator.maze_width
-	depth = maze_generator.maze_depth
+	var width = 5
+	var depth = 5
+	var is_generated_slowly = true
 	
-	center_maze_on_screen()
-	calculate_camera_distance()
+	get_maze_generator().generate(width, depth, is_generated_slowly)
+	center_maze_on_screen(width, depth)
+	calculate_camera_distance(width, depth)
 
-func center_maze_on_screen():
-	maze_generator.position.x -= width / 2
-	maze_generator.position.z -= depth / 2
 
-func calculate_camera_distance():
-	var maze_length = width if width > depth else depth
+func center_maze_on_screen(maze_width, maze_depth):
+	get_maze_generator().position.x = 0 - (maze_width / 2)
+	get_maze_generator().position.z = 0 - (maze_depth / 2)
+
+
+func calculate_camera_distance(maze_width, maze_depth):
+	var maze_length = maze_width if maze_width > maze_depth else maze_depth
 	camera.position.y = maze_length if maze_length > 10 else 10
+
+
+func get_maze_generator():
+	return get_node("./Maze Generator")

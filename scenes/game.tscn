@@ -1,20 +1,126 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5ptabdfgohvv"]
+[gd_scene load_steps=8 format=3 uid="uid://b5ptabdfgohvv"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_3hoi0"]
 [ext_resource type="PackedScene" uid="uid://gjtn7bm2cbge" path="res://scenes/maze_generator.tscn" id="1_6mc2g"]
-[ext_resource type="PackedScene" uid="uid://d246y5b0regkx" path="res://scenes/menu.tscn" id="3_yca3g"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="2_7213f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7eusc"]
+bg_color = Color(0.45098, 0.54902, 0.870588, 0.215686)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7xv51"]
+bg_color = Color(0.372549, 0.529412, 0.666667, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_size = 4
+shadow_offset = Vector2(-2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhk6y"]
+bg_color = Color(0.705882, 0.882353, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+shadow_size = 1
+shadow_offset = Vector2(-1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6vv7p"]
+bg_color = Color(0.607843, 0.490196, 0.784314, 1)
 
 [node name="Game" type="Node"]
 script = ExtResource("1_3hoi0")
 
-[node name="Menu" parent="." instance=ExtResource("3_yca3g")]
+[node name="Maze Menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_7213f")
+
+[node name="MarginContainerBack" type="MarginContainer" parent="Maze Menu"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -222.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Maze Menu/MarginContainerBack"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7eusc")
+
+[node name="MarginContainer" type="MarginContainer" parent="Maze Menu/MarginContainerBack"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Maze Menu/MarginContainerBack/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="LabelWidth" type="Label" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Width"
+
+[node name="HSliderWidth" type="HSlider" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer"]
+layout_mode = 2
+min_value = 2.0
+max_value = 20.0
+value = 5.0
+
+[node name="LabelHeight" type="Label" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Height"
+
+[node name="HSliderHeight" type="HSlider" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer"]
+layout_mode = 2
+min_value = 2.0
+max_value = 20.0
+value = 5.0
+
+[node name="Generate Slowly" type="CheckButton" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Generate Slowly"
+
+[node name="Generate Maze" type="Button" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
+theme_override_colors/font_focus_color = Color(0.490196, 0.490196, 0.490196, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_7xv51")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mhk6y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6vv7p")
+theme_override_styles/focus = SubResource("StyleBoxFlat_mhk6y")
+text = "Generate Maze"
 
 [node name="Maze Generator" parent="." instance=ExtResource("1_6mc2g")]
-maze_width = 25
-maze_depth = 25
 
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 10, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.707107, 0.5, -0.5, 0, 0.707107, 0.707107, 0.707107, -0.5, 0.5, 0, 5, 0)
+
+[connection signal="value_changed" from="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/HSliderWidth" to="Maze Menu" method="_on_h_slider_width_value_changed"]
+[connection signal="value_changed" from="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/HSliderHeight" to="Maze Menu" method="_on_h_slider_height_value_changed"]
+[connection signal="toggled" from="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/Generate Slowly" to="Maze Menu" method="_on_generate_slowly_toggled"]
+[connection signal="pressed" from="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/Generate Maze" to="Maze Menu" method="_on_generate_maze_pressed"]

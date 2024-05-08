@@ -1,14 +1,20 @@
 extends Node3D
 
+
 const MAZE_CELL = preload("res://scenes/maze_cell.tscn")
 
 var maze_grid = []
-var generate_slowly = true
+var generated_slowly = false
 
-@export var maze_width = 5
-@export var maze_depth = 5
+@export var maze_width = 2
+@export var maze_depth = 2
 
-func _ready():
+
+func generate(maze_width, maze_depth, generated_slowly):
+	self.maze_width = maze_width if maze_width is int and maze_width > 0 else self.maze_width
+	self.maze_depth = maze_depth if maze_depth is int and maze_depth > 0 else self.maze_depth
+	self.generated_slowly = generated_slowly if generated_slowly is bool else self.generated_slowly
+	
 	for x in maze_width:
 		maze_grid.append([])
 		for z in maze_depth:
@@ -16,22 +22,24 @@ func _ready():
 			maze_cell.name = str("Maze Cell ", x, "-", z)
 			maze_cell.position = Vector3(x, 0, z)
 			maze_grid[x].append(maze_cell)
-			add_child(maze_cell)
+			self.add_child(maze_cell)
 	
 	await generate_maze(null, maze_grid[0][0])
+
 
 func generate_maze(previous_cell, current_cell):
 	current_cell.visit()
 	clear_walls(previous_cell, current_cell)
 	
-	if generate_slowly:
-		await get_tree().create_timer(0.002).timeout
+	if generated_slowly:
+		await get_tree().create_timer(0.05).timeout
 	
 	var next_cell = get_next_unvisited_cell(current_cell)
 	while next_cell != null:
 		await generate_maze(current_cell, next_cell)
 		if next_cell != null:
 			next_cell = get_next_unvisited_cell(current_cell)
+
 
 func clear_walls(previous_cell, current_cell):
 	if previous_cell == null:
@@ -57,11 +65,13 @@ func clear_walls(previous_cell, current_cell):
 		current_cell.clear_front_wall()
 		return
 
+
 func get_next_unvisited_cell(current_cell):
 	var unvisited_cells = get_unvisited_cells(current_cell)
 	unvisited_cells.shuffle()
 	
 	return null if unvisited_cells.is_empty() else unvisited_cells[0]
+
 
 func get_unvisited_cells(current_cell):
 	var unvisited_cells = []
@@ -89,3 +99,15 @@ func get_unvisited_cells(current_cell):
 			unvisited_cells.append(cell_to_back)
 	
 	return unvisited_cells
+
+
+func set_maze_width(maze_width):
+	self.maze_width = maze_width
+
+
+func set_maze_depth(maze_depth):
+	self.maze_depth = maze_depth
+
+
+func set_is_generated_slowly(generated_slowly):
+	self.generated_slowly = generated_slowly
