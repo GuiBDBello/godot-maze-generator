@@ -18,7 +18,6 @@ func _on_generate_maze_pressed():
 	game.add_child(maze_generator)
 	maze_generator.generate(self.maze_width, self.maze_height, self.is_generated_slowly_toggled_on)
 	game.center_maze_on_screen(self.maze_width, self.maze_height)
-	game.calculate_camera_distance(self.maze_width, self.maze_height)
 
 
 func _on_h_slider_width_value_changed(value):
