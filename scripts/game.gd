@@ -1,6 +1,7 @@
 extends Node
 
-@onready var camera = $Camera
+
+@onready var camera = $"Camera Origin/SpringArm3D/Camera"
 
 
 func _ready():

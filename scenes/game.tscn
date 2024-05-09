@@ -1,8 +1,26 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5ptabdfgohvv"]
+[gd_scene load_steps=15 format=3 uid="uid://b5ptabdfgohvv"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_3hoi0"]
 [ext_resource type="PackedScene" uid="uid://gjtn7bm2cbge" path="res://scenes/maze_generator.tscn" id="1_6mc2g"]
+[ext_resource type="Shader" path="res://shaders/sky.gdshader" id="2_7x0ss"]
 [ext_resource type="Script" path="res://scripts/menu.gd" id="2_7213f"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="4_7e37c"]
+[ext_resource type="PackedScene" uid="uid://cn4at1gn2s34f" path="res://assets/ground/ground.glb" id="5_1omnm"]
+[ext_resource type="PackedScene" uid="uid://rc8rnxx07fri" path="res://assets/tree/tree.glb" id="6_fxjwv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6dqnt"]
+shader = ExtResource("2_7x0ss")
+shader_parameter/skyColor = Color(0.160311, 0.845074, 1, 1)
+shader_parameter/horizonColor = Color(1, 1, 1, 1)
+
+[sub_resource type="Sky" id="Sky_hy35c"]
+sky_material = SubResource("ShaderMaterial_6dqnt")
+
+[sub_resource type="Environment" id="Environment_wlv7q"]
+background_mode = 2
+sky = SubResource("Sky_hy35c")
+ambient_light_source = 3
+ambient_light_sky_contribution = 0.2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7eusc"]
 bg_color = Color(0.45098, 0.54902, 0.870588, 0.215686)
@@ -38,6 +56,9 @@ bg_color = Color(0.607843, 0.490196, 0.784314, 1)
 
 [node name="Game" type="Node"]
 script = ExtResource("1_3hoi0")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wlv7q")
 
 [node name="Maze Menu" type="Control" parent="."]
 layout_mode = 3
@@ -114,11 +135,73 @@ text = "Generate Maze"
 
 [node name="Maze Generator" parent="." instance=ExtResource("1_6mc2g")]
 
-[node name="Camera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 10, 0)
+[node name="Ground" parent="." instance=ExtResource("5_1omnm")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="Camera Origin" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Camera Origin"]
+transform = Transform3D(1, 0, 0, 0, -5.96046e-08, 1, 0, -1, -5.96046e-08, 0, 0, 0)
+collision_mask = 2
+spring_length = 10.0
+margin = 0.0
+
+[node name="Camera" type="Camera3D" parent="Camera Origin/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.76837e-07, 10)
+script = ExtResource("4_7e37c")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.707107, 0.5, -0.5, 0, 0.707107, 0.707107, 0.707107, -0.5, 0.5, 0, 5, 0)
+transform = Transform3D(0.866026, 0.25, -0.433013, 0, 0.866026, 0.5, 0.5, -0.433013, 0.75, 0, 5, 0)
+shadow_enabled = true
+
+[node name="tree" parent="." instance=ExtResource("6_fxjwv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.1604, 0, 3.65387)
+
+[node name="tree16" parent="." instance=ExtResource("6_fxjwv")]
+transform = Transform3D(0.733955, 0, 0.679198, 0, 1, 0, -0.679198, 0, 0.733955, -75.3874, 0, -26.4295)
+
+[node name="tree2" parent="." instance=ExtResource("6_fxjwv")]
+transform = Transform3D(0.733327, 0, 0.679877, 0, 1, 0, -0.679877, 0, 0.733327, 31.3253, 0, -37.2645)
+
+[node name="tree3" parent="." instance=ExtResource("6_fxjwv")]
+transform = Transform3D(0.44779, 0, -0.894139, 0, 1, 0, 0.894139, 0, 0.44779, -29.3188, 0, -44.8415)
+
+[node name="tree11" parent="." instance=ExtResource("6_fxjwv")]
+transform = Transform3D(0.44779, 0, -0.894139, 0, 1, 0, 0.894139, 0, 0.44779, -62.6619, 0, -68.3738)
+
+[node name="tree12" parent="." instance=ExtResource("6_fxjwv")]
+transform = Transform3D(-0.820312, 0, -0.571917, 0, 1, 0, 0.571917, 0, -0.820312, 52.197, 0, -68.3738)
+
+[node name="tree13" parent="." instance=ExtResource("6_fxjwv")]
+transform = Transform3D(-0.18841, 0, -0.982091, 0, 1, 0, 0.982091, 0, -0.18841, 1.6955, 0, -84.4671)
+
+[node name="tree4" parent="." instance=ExtResource("6_fxjwv")]
+transform = Transform3D(-0.490174, 0, -0.871625, 0, 1, 0, 0.871625, 0, -0.490174, -24.2144, 0, 23.2396)
+
+[node name="tree5" parent="." instance=ExtResource("6_fxjwv")]
+transform = Transform3D(0.0279915, 0, -0.999608, 0, 1, 0, 0.999608, 0, 0.0279915, 23.8499, 0, 23.2396)
+
+[node name="tree10" parent="." instance=ExtResource("6_fxjwv")]
+transform = Transform3D(-0.719715, 0, -0.694269, 0, 1, 0, 0.694269, 0, -0.719715, 59.2805, 0, 0.283154)
+
+[node name="tree6" parent="." instance=ExtResource("6_fxjwv")]
+transform = Transform3D(-0.7998, 0, 0.600267, 0, 1, 0, -0.600267, 0, -0.7998, -58.7072, 0, 39.339)
+
+[node name="tree7" parent="." instance=ExtResource("6_fxjwv")]
+transform = Transform3D(-0.994643, 0, 0.103365, 0, 1, 0, -0.103365, 0, -0.994643, -64.2799, 0, 81.4574)
+
+[node name="tree8" parent="." instance=ExtResource("6_fxjwv")]
+transform = Transform3D(-0.245917, 0, 0.969291, 0, 1, 0, -0.969291, 0, -0.245917, 76.3616, 0, 50.0546)
+
+[node name="tree9" parent="." instance=ExtResource("6_fxjwv")]
+transform = Transform3D(-0.709472, 0, 0.704733, 0, 1, 0, -0.704733, 0, -0.709472, 45.5888, 0, 79.3469)
+
+[node name="tree14" parent="." instance=ExtResource("6_fxjwv")]
+transform = Transform3D(-0.767881, 0, -0.640592, 0, 1, 0, 0.640592, 0, -0.767881, 12.2585, 0, 63.5933)
+
+[node name="tree15" parent="." instance=ExtResource("6_fxjwv")]
+transform = Transform3D(-0.96207, 0, -0.272801, 0, 1, 0, 0.272801, 0, -0.96207, -26.6239, 0, 66.8253)
 
 [connection signal="value_changed" from="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/HSliderWidth" to="Maze Menu" method="_on_h_slider_width_value_changed"]
 [connection signal="value_changed" from="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/HSliderHeight" to="Maze Menu" method="_on_h_slider_height_value_changed"]
