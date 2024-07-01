@@ -1,42 +1,85 @@
 <a name="readme-top"></a>
 
-
-
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
+<h1 align="center">Godot Maze Generator</h1>
+<br/>
+<p align="center">
   <a href="https://github.com/GuiBDBello/godot-maze-generator">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img alt="Godot Maze Generator" title="Godot Maze Generator" src="images/logo.gif" width="450">
   </a>
+</p>
 
-<h3 align="center">Godot Maze Generator</h3>
+<p align="center">
+  3D maze generation powered by Godot.
+  <br />
+  <br />
+  <a href="https://guibdbello.itch.io/godot-maze-generator">Play Game</a>
+  ·
+  <a href="https://github.com/GuiBDBello/godot-maze-generator/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+  ·
+  <a href="https://github.com/GuiBDBello/godot-maze-generator/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+</p>
 
-  <p align="center">
-    Generate 3D mazes.
-    <br />
-    <br />
-    <a href="https://guibdbello.itch.io/godot-maze-generator">View Demo</a>
-  </p>
-</div>
+## Table of Contents
 
+<ol>
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#getting-started">Getting Started</a></li>
+  <li><a href="#build-process">Build Process</a></li>
+  <li><a href="#acknowledgments">Acknowledgments</a></li>
+  <li><a href="#license">License</a></li>
+</ol>
 
+## Introduction
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-    </li>
-</details>
+Generate 3D mazes in your web browser in this game made with Godot.
 
+<p align="center">
+  <img alt="Godot Maze Generator" title="Godot Maze Generator" src="images/game.gif">
+</p>
 
+### How to Play
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
+- Click and drag **Left Mouse Button** to rotate the camera.
+- Use the **Mouse Scroll Wheel** to zoom in or zoom out.
 
-![Game](images/game.png)
+Change the Width and Height of the maze, choose if you want it to be generated slowly or not and then click `Generate Maze`.
 
-Generate perfect mazes in your web browser in this game made with Godot.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Getting Started
+
+To get a local copy up and running follow the steps below.
+
+### Prerequisites
+
+1. [Godot](https://godotengine.org/)
+
+### Configuration
+
+1. Clone repository: `git clone https://github.com/GuiBDBello/godot-maze-generator.git`.
+1. Import the project in Godot: `Import > Select the project folder > Import & Edit`.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Build Process
+
+1. In Godot, select `Project > Export...`.
+1. Select the `Presets`.
+1. Click on `Export Project...`.
+1. Select the folder and press `Save`.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Acknowledgments
+
+List of references that were useful in the making of this project:
+
+* [How to Procedurally Generate a Perfect Maze (Unity Tutorial)](https://www.youtube.com/watch?v=_aeYq5BmDMg)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## License
+
+Distributed under the MIT License. See [LICENSE](./LICENSE) for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
