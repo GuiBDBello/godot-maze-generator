@@ -57,8 +57,67 @@ bg_color = Color(0.607843, 0.490196, 0.784314, 1)
 [node name="Game" type="Node"]
 script = ExtResource("1_3hoi0")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="Scenario" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Scenario"]
 environment = SubResource("Environment_wlv7q")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Scenario"]
+transform = Transform3D(0.866026, 0.25, -0.433012, 0, 0.866025, 0.5, 0.5, -0.433013, 0.75, 0, 5, 0)
+shadow_enabled = true
+
+[node name="Ground" parent="Scenario" instance=ExtResource("5_1omnm")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="Trees" type="Node" parent="Scenario"]
+
+[node name="tree" parent="Scenario/Trees" instance=ExtResource("6_fxjwv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.1604, 0, 3.65387)
+
+[node name="tree16" parent="Scenario/Trees" instance=ExtResource("6_fxjwv")]
+transform = Transform3D(0.733955, 0, 0.679198, 0, 1, 0, -0.679198, 0, 0.733955, -75.3874, 0, -26.4295)
+
+[node name="tree2" parent="Scenario/Trees" instance=ExtResource("6_fxjwv")]
+transform = Transform3D(0.733327, 0, 0.679877, 0, 1, 0, -0.679877, 0, 0.733327, 31.3253, 0, -37.2645)
+
+[node name="tree3" parent="Scenario/Trees" instance=ExtResource("6_fxjwv")]
+transform = Transform3D(0.44779, 0, -0.894139, 0, 1, 0, 0.894139, 0, 0.44779, -29.3188, 0, -44.8415)
+
+[node name="tree11" parent="Scenario/Trees" instance=ExtResource("6_fxjwv")]
+transform = Transform3D(0.44779, 0, -0.894139, 0, 1, 0, 0.894139, 0, 0.44779, -62.6619, 0, -68.3738)
+
+[node name="tree12" parent="Scenario/Trees" instance=ExtResource("6_fxjwv")]
+transform = Transform3D(-0.820312, 0, -0.571917, 0, 1, 0, 0.571917, 0, -0.820312, 52.197, 0, -68.3738)
+
+[node name="tree13" parent="Scenario/Trees" instance=ExtResource("6_fxjwv")]
+transform = Transform3D(-0.18841, 0, -0.982091, 0, 1, 0, 0.982091, 0, -0.18841, 1.6955, 0, -84.4671)
+
+[node name="tree4" parent="Scenario/Trees" instance=ExtResource("6_fxjwv")]
+transform = Transform3D(-0.490174, 0, -0.871625, 0, 1, 0, 0.871625, 0, -0.490174, -24.2144, 0, 23.2396)
+
+[node name="tree5" parent="Scenario/Trees" instance=ExtResource("6_fxjwv")]
+transform = Transform3D(0.0279915, 0, -0.999608, 0, 1, 0, 0.999608, 0, 0.0279915, 23.8499, 0, 23.2396)
+
+[node name="tree10" parent="Scenario/Trees" instance=ExtResource("6_fxjwv")]
+transform = Transform3D(-0.719715, 0, -0.694269, 0, 1, 0, 0.694269, 0, -0.719715, 59.2805, 0, 0.283154)
+
+[node name="tree6" parent="Scenario/Trees" instance=ExtResource("6_fxjwv")]
+transform = Transform3D(-0.7998, 0, 0.600267, 0, 1, 0, -0.600267, 0, -0.7998, -58.7072, 0, 39.339)
+
+[node name="tree7" parent="Scenario/Trees" instance=ExtResource("6_fxjwv")]
+transform = Transform3D(-0.994643, 0, 0.103365, 0, 1, 0, -0.103365, 0, -0.994643, -64.2799, 0, 81.4574)
+
+[node name="tree8" parent="Scenario/Trees" instance=ExtResource("6_fxjwv")]
+transform = Transform3D(-0.245917, 0, 0.969291, 0, 1, 0, -0.969291, 0, -0.245917, 76.3616, 0, 50.0546)
+
+[node name="tree9" parent="Scenario/Trees" instance=ExtResource("6_fxjwv")]
+transform = Transform3D(-0.709472, 0, 0.704733, 0, 1, 0, -0.704733, 0, -0.709472, 45.5888, 0, 79.3469)
+
+[node name="tree14" parent="Scenario/Trees" instance=ExtResource("6_fxjwv")]
+transform = Transform3D(-0.767881, 0, -0.640592, 0, 1, 0, 0.640592, 0, -0.767881, 12.2585, 0, 63.5933)
+
+[node name="tree15" parent="Scenario/Trees" instance=ExtResource("6_fxjwv")]
+transform = Transform3D(-0.96207, 0, -0.272801, 0, 1, 0, 0.272801, 0, -0.96207, -26.6239, 0, 66.8253)
 
 [node name="Maze Menu" type="Control" parent="."]
 layout_mode = 3
@@ -103,7 +162,7 @@ text = "Width"
 [node name="HSliderWidth" type="HSlider" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer"]
 layout_mode = 2
 min_value = 2.0
-max_value = 20.0
+max_value = 40.0
 value = 5.0
 
 [node name="LabelHeight" type="Label" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer"]
@@ -113,7 +172,7 @@ text = "Height"
 [node name="HSliderHeight" type="HSlider" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer"]
 layout_mode = 2
 min_value = 2.0
-max_value = 20.0
+max_value = 40.0
 value = 5.0
 
 [node name="Generate Slowly" type="CheckButton" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer"]
@@ -135,9 +194,6 @@ text = "Generate Maze"
 
 [node name="Maze Generator" parent="." instance=ExtResource("1_6mc2g")]
 
-[node name="Ground" parent="." instance=ExtResource("5_1omnm")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
-
 [node name="Camera Origin" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0)
 
@@ -150,58 +206,6 @@ margin = 0.0
 [node name="Camera" type="Camera3D" parent="Camera Origin/SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.76837e-07, 10)
 script = ExtResource("4_7e37c")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.866026, 0.25, -0.433013, 0, 0.866026, 0.5, 0.5, -0.433013, 0.75, 0, 5, 0)
-shadow_enabled = true
-
-[node name="tree" parent="." instance=ExtResource("6_fxjwv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.1604, 0, 3.65387)
-
-[node name="tree16" parent="." instance=ExtResource("6_fxjwv")]
-transform = Transform3D(0.733955, 0, 0.679198, 0, 1, 0, -0.679198, 0, 0.733955, -75.3874, 0, -26.4295)
-
-[node name="tree2" parent="." instance=ExtResource("6_fxjwv")]
-transform = Transform3D(0.733327, 0, 0.679877, 0, 1, 0, -0.679877, 0, 0.733327, 31.3253, 0, -37.2645)
-
-[node name="tree3" parent="." instance=ExtResource("6_fxjwv")]
-transform = Transform3D(0.44779, 0, -0.894139, 0, 1, 0, 0.894139, 0, 0.44779, -29.3188, 0, -44.8415)
-
-[node name="tree11" parent="." instance=ExtResource("6_fxjwv")]
-transform = Transform3D(0.44779, 0, -0.894139, 0, 1, 0, 0.894139, 0, 0.44779, -62.6619, 0, -68.3738)
-
-[node name="tree12" parent="." instance=ExtResource("6_fxjwv")]
-transform = Transform3D(-0.820312, 0, -0.571917, 0, 1, 0, 0.571917, 0, -0.820312, 52.197, 0, -68.3738)
-
-[node name="tree13" parent="." instance=ExtResource("6_fxjwv")]
-transform = Transform3D(-0.18841, 0, -0.982091, 0, 1, 0, 0.982091, 0, -0.18841, 1.6955, 0, -84.4671)
-
-[node name="tree4" parent="." instance=ExtResource("6_fxjwv")]
-transform = Transform3D(-0.490174, 0, -0.871625, 0, 1, 0, 0.871625, 0, -0.490174, -24.2144, 0, 23.2396)
-
-[node name="tree5" parent="." instance=ExtResource("6_fxjwv")]
-transform = Transform3D(0.0279915, 0, -0.999608, 0, 1, 0, 0.999608, 0, 0.0279915, 23.8499, 0, 23.2396)
-
-[node name="tree10" parent="." instance=ExtResource("6_fxjwv")]
-transform = Transform3D(-0.719715, 0, -0.694269, 0, 1, 0, 0.694269, 0, -0.719715, 59.2805, 0, 0.283154)
-
-[node name="tree6" parent="." instance=ExtResource("6_fxjwv")]
-transform = Transform3D(-0.7998, 0, 0.600267, 0, 1, 0, -0.600267, 0, -0.7998, -58.7072, 0, 39.339)
-
-[node name="tree7" parent="." instance=ExtResource("6_fxjwv")]
-transform = Transform3D(-0.994643, 0, 0.103365, 0, 1, 0, -0.103365, 0, -0.994643, -64.2799, 0, 81.4574)
-
-[node name="tree8" parent="." instance=ExtResource("6_fxjwv")]
-transform = Transform3D(-0.245917, 0, 0.969291, 0, 1, 0, -0.969291, 0, -0.245917, 76.3616, 0, 50.0546)
-
-[node name="tree9" parent="." instance=ExtResource("6_fxjwv")]
-transform = Transform3D(-0.709472, 0, 0.704733, 0, 1, 0, -0.704733, 0, -0.709472, 45.5888, 0, 79.3469)
-
-[node name="tree14" parent="." instance=ExtResource("6_fxjwv")]
-transform = Transform3D(-0.767881, 0, -0.640592, 0, 1, 0, 0.640592, 0, -0.767881, 12.2585, 0, 63.5933)
-
-[node name="tree15" parent="." instance=ExtResource("6_fxjwv")]
-transform = Transform3D(-0.96207, 0, -0.272801, 0, 1, 0, 0.272801, 0, -0.96207, -26.6239, 0, 66.8253)
 
 [connection signal="value_changed" from="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/HSliderWidth" to="Maze Menu" method="_on_h_slider_width_value_changed"]
 [connection signal="value_changed" from="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/HSliderHeight" to="Maze Menu" method="_on_h_slider_height_value_changed"]
