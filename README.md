@@ -4,7 +4,7 @@
 <br/>
 <p align="center">
   <a href="https://github.com/GuiBDBello/godot-maze-generator">
-    <img alt="Godot Maze Generator" title="Godot Maze Generator" src="images/logo.gif" width="450">
+	<img alt="Godot Maze Generator" title="Godot Maze Generator" src="images/logo.gif" width="450">
   </a>
 </p>
 
@@ -74,7 +74,7 @@ To get a local copy up and running follow the steps below.
 
 List of references that were useful in the making of this project:
 
-* [How to Procedurally Generate a Perfect Maze (Unity Tutorial)](https://www.youtube.com/watch?v=_aeYq5BmDMg)
+* [Maze generation algorithm](https://en.wikipedia.org/wiki/Maze_generation_algorithm)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

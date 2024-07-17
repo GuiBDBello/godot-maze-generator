@@ -1,10 +1,9 @@
 extends Camera3D
 
+@export var mouse_sensitivity = 0.5
 
 @onready var camera_origin = $"../.."
 @onready var spring_arm = $".."
-
-@export var mouse_sensitivity = 0.5
 
 
 func _input(event):

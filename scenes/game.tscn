@@ -161,7 +161,6 @@ text = "Width"
 [node name="HSliderWidth" type="HSlider" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer"]
 layout_mode = 2
 min_value = 2.0
-max_value = 40.0
 value = 5.0
 
 [node name="LabelHeight" type="Label" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer"]
@@ -171,7 +170,6 @@ text = "Height"
 [node name="HSliderHeight" type="HSlider" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer"]
 layout_mode = 2
 min_value = 2.0
-max_value = 40.0
 value = 5.0
 
 [node name="Generate Slowly" type="CheckButton" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer"]

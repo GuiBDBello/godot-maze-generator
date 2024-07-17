@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2vh3d2n372po"]
+
+[ext_resource type="Script" path="res://scripts/randomized_depth_first_search.gd" id="1_4ka1l"]
+
+[node name="RD-FS Recursive" type="Node3D"]
+script = ExtResource("1_4ka1l")
