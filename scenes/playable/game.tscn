@@ -18,8 +18,8 @@ sky_material = SubResource("ShaderMaterial_6dqnt")
 [sub_resource type="Environment" id="Environment_wlv7q"]
 background_mode = 2
 sky = SubResource("Sky_hy35c")
-ambient_light_source = 3
-ambient_light_sky_contribution = 0.12
+ambient_light_source = 2
+ambient_light_color = Color(0.255659, 0.255659, 0.255659, 1)
 tonemap_mode = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7eusc"]
@@ -65,6 +65,7 @@ environment = SubResource("Environment_wlv7q")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Scenario"]
 transform = Transform3D(0.866026, 0.25, -0.433012, 0, 0.866025, 0.5, 0.5, -0.433013, 0.75, 0, 5, 0)
 shadow_enabled = true
+shadow_opacity = 0.85
 
 [node name="Ground" parent="Scenario" instance=ExtResource("3_mq8d8")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
@@ -202,7 +203,7 @@ spring_length = 10.0
 margin = 0.0
 
 [node name="Camera" type="Camera3D" parent="Camera Origin/SpringArm3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.76837e-07, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.53674e-07, 10)
 script = ExtResource("6_n6fda")
 
 [connection signal="value_changed" from="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/HSliderWidth" to="Maze Menu" method="_on_h_slider_width_value_changed"]
