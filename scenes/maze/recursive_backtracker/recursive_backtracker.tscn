@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2vh3d2n372po"]
+
+[ext_resource type="Script" path="res://scenes/maze/recursive_backtracker/recursive_backtracker.gd" id="1_t8duk"]
+
+[node name="Recursive Backtracker" type="Node3D"]
+script = ExtResource("1_t8duk")

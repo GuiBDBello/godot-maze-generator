@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://c6trg5gg1lt7q"]
 
-[ext_resource type="Script" path="res://scripts/maze_cell.gd" id="1_14ky4"]
+[ext_resource type="Script" path="res://scenes/maze/maze_cell.gd" id="1_14ky4"]
 [ext_resource type="Texture2D" uid="uid://cgiqic062byim" path="res://assets/wall/wall_wall-texture.png" id="1_213p3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e3o6y"]
