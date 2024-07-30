@@ -1,6 +1,18 @@
-[gd_resource type="Theme" load_steps=13 format=3 uid="uid://h6sur28uuqjw"]
+[gd_resource type="Theme" load_steps=20 format=3 uid="uid://h6sur28uuqjw"]
 
 [ext_resource type="FontFile" uid="uid://hpwa21wdhqnr" path="res://resources/Audiowide/Audiowide-Regular.ttf" id="1_cmhkn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_baiix"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2878j"]
 
@@ -49,11 +61,21 @@ expand_margin_right = 6.0
 expand_margin_bottom = 6.0
 shadow_offset = Vector2(4, 4)
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_t2bce"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dxq5v"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_esaiw"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ykm6"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pfpke"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r0bx8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a2mfx"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_iu8b5"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_fm6d1"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_a8dp5"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_v7ruf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j5kvv"]
 bg_color = Color(0.372549, 0.529412, 0.666667, 1)
@@ -63,44 +85,38 @@ corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
-expand_margin_left = 6.0
-expand_margin_top = 6.0
-expand_margin_right = 6.0
-expand_margin_bottom = 6.0
 shadow_color = Color(0.099986, 0.099986, 0.099986, 0.6)
 shadow_size = 1
 shadow_offset = Vector2(1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ru2lj"]
 bg_color = Color(0.393102, 0.551811, 0.690945, 1)
+border_width_bottom = 2
 border_color = Color(0.294299, 0.435877, 0.559053, 1)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
-expand_margin_left = 6.0
-expand_margin_top = 6.0
-expand_margin_right = 6.0
-expand_margin_bottom = 6.0
 shadow_color = Color(0.099986, 0.099986, 0.099986, 0.6)
 shadow_size = 1
 shadow_offset = Vector2(1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ll8j7"]
-bg_color = Color(0.0769857, 0.136043, 0.187104, 1)
-border_width_bottom = 4
+bg_color = Color(0.151996, 0.21579, 0.329242, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
 border_color = Color(0.294299, 0.435877, 0.559053, 1)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
-expand_margin_left = 6.0
-expand_margin_top = 6.0
-expand_margin_right = 6.0
-expand_margin_bottom = 6.0
 shadow_color = Color(0.099986, 0.099986, 0.099986, 0.6)
 shadow_size = 1
 shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_21gpl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kwuao"]
 bg_color = Color(0.372549, 0.529412, 0.666667, 1)
@@ -121,19 +137,48 @@ shadow_offset = Vector2(1, 1)
 [resource]
 default_font = ExtResource("1_cmhkn")
 Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
 Button/colors/font_focus_color = Color(0.929715, 0.929715, 0.929715, 1)
 Button/colors/font_hover_color = Color(0.929412, 0.929412, 0.929412, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
 Button/colors/font_pressed_color = Color(0, 0, 0, 1)
-Button/font_sizes/font_size = 24
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 22
+Button/styles/disabled = SubResource("StyleBoxFlat_baiix")
 Button/styles/focus = SubResource("StyleBoxEmpty_2878j")
 Button/styles/hover = SubResource("StyleBoxFlat_4bon2")
 Button/styles/normal = SubResource("StyleBoxFlat_1ev35")
 Button/styles/pressed = SubResource("StyleBoxFlat_8x1c6")
-HSlider/icons/grabber = SubResource("PlaceholderTexture2D_t2bce")
-HSlider/icons/grabber_highlight = SubResource("PlaceholderTexture2D_esaiw")
-HSlider/icons/tick = SubResource("PlaceholderTexture2D_pfpke")
+CheckButton/styles/hover = SubResource("StyleBoxEmpty_dxq5v")
+CheckButton/styles/hover_pressed = SubResource("StyleBoxEmpty_1ykm6")
+CheckButton/styles/normal = SubResource("StyleBoxEmpty_r0bx8")
+CheckButton/styles/pressed = SubResource("StyleBoxEmpty_a2mfx")
+HSlider/icons/grabber = SubResource("ImageTexture_iu8b5")
+HSlider/icons/grabber_disabled = SubResource("ImageTexture_fm6d1")
+HSlider/icons/grabber_highlight = SubResource("ImageTexture_a8dp5")
+HSlider/icons/tick = SubResource("ImageTexture_v7ruf")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_j5kvv")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_ru2lj")
 HSlider/styles/slider = SubResource("StyleBoxFlat_ll8j7")
-Label/font_sizes/font_size = 24
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0.197937, 0.197937, 0.197937, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 22
+Label/fonts/font = ExtResource("1_cmhkn")
+Label/styles/normal = SubResource("StyleBoxEmpty_21gpl")
+OptionButton/font_sizes/font_size = 20
 OptionButton/styles/normal = SubResource("StyleBoxFlat_kwuao")

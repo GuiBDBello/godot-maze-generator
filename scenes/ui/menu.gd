@@ -14,6 +14,11 @@ func _ready() -> void:
 		option_button.add_item(algorithm._bundled.get("names")[0])
 
 
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("toggle_menu_visible"):
+		self.visible = !self.visible
+
+
 func _on_option_button_item_focused(index: int) -> void:
 	game.change_algorithm(index)
 
