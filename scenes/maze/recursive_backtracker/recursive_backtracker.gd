@@ -1,6 +1,5 @@
 extends Node3D
 
-const ALGORITHM_NAME: String = "Recursive Backtracker"
 const MAZE_CELL: PackedScene = preload("res://scenes/maze/maze_cell.tscn")
 
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()

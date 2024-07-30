@@ -1,10 +1,19 @@
 extends Node
 
+@export var maze_generation_algorithms : Array[PackedScene]
+
 @onready var camera : Camera3D = $"Camera Origin/SpringArm3D/Camera"
 
-const RECURSIVE_BACKTRACKER = preload("res://scenes/maze/recursive_backtracker/recursive_backtracker.tscn")
-
 var maze_generator: Node3D
+var selected_algorithm: PackedScene
+
+
+func _ready() -> void:
+	selected_algorithm = maze_generation_algorithms[0]
+
+
+func change_algorithm(index: int) -> void:
+	selected_algorithm = maze_generation_algorithms[index]
 
 
 func generate_maze(maze_width: int, maze_height: int, is_generated_slowly: bool):
@@ -13,7 +22,7 @@ func generate_maze(maze_width: int, maze_height: int, is_generated_slowly: bool)
 		maze_generator.queue_free()
 		await maze_generator.tree_exited
 	
-	maze_generator = RECURSIVE_BACKTRACKER.instantiate()
+	maze_generator = selected_algorithm.instantiate()
 	maze_generator.name = "Maze Generator"
 	self.add_child(maze_generator)
 	maze_generator.generate_maze(maze_width, maze_height, is_generated_slowly)
