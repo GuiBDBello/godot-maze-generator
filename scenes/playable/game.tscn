@@ -42,7 +42,7 @@ shadow_enabled = true
 shadow_opacity = 0.85
 
 [node name="Ground" parent="Scenario" instance=ExtResource("3_mq8d8")]
-transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, 0, 0, 0)
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
 
 [node name="Trees" type="Node" parent="Scenario"]
 
@@ -57,6 +57,54 @@ transform = Transform3D(0.733327, 0, 0.679877, 0, 1, 0, -0.679877, 0, 0.733327, 
 
 [node name="tree3" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
 transform = Transform3D(0.44779, 0, -0.894139, 0, 1, 0, 0.894139, 0, 0.44779, -194.319, 0, -44.8415)
+
+[node name="tree30" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -139.16, 0, 434.654)
+
+[node name="tree31" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(0.733955, 0, 0.679198, 0, 1, 0, -0.679198, 0, 0.733955, -352.387, 0, 156.57)
+
+[node name="tree32" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(0.733327, 0, 0.679877, 0, 1, 0, -0.679877, 0, 0.733327, -69.675, 0, 316.736)
+
+[node name="tree33" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(0.44779, 0, -0.894139, 0, 1, 0, 0.894139, 0, 0.44779, -453.319, 0, 309.159)
+
+[node name="tree34" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 102.23, 0, 293.037)
+
+[node name="tree35" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(-0.038719, 0, -0.99925, 0, 1, 0, 0.99925, 0, -0.038719, 449.639, 0, 338.898)
+
+[node name="tree36" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(-0.0377949, 0, -0.999286, 0, 1, 0, 0.999286, 0, -0.0377949, 136.477, 0, 425.551)
+
+[node name="tree37" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(-0.948887, 0, 0.315616, 0, 1, 0, -0.315616, 0, -0.948887, 413.112, 0, 159.632)
+
+[node name="tree38" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 118.047, 0, -420.024)
+
+[node name="tree39" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(-0.533157, 0, -0.846016, 0, 1, 0, 0.846016, 0, -0.533157, 395.982, 0, -206.603)
+
+[node name="tree40" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(-0.532374, 0, -0.84651, 0, 1, 0, 0.84651, 0, -0.532374, 81.4487, 0, -288.14)
+
+[node name="tree41" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(-0.663952, 0, 0.747775, 0, 1, 0, -0.747775, 0, -0.663952, 453.981, 0, -380.115)
+
+[node name="tree42" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -335.393, 0, -422.855)
+
+[node name="tree43" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(-0.99925, 0, 0.0387191, 0, 1, 0, -0.0387191, 0, -0.99925, -381.254, 0, -75.4459)
+
+[node name="tree44" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(-0.999286, 0, 0.0377949, 0, 1, 0, -0.0377949, 0, -0.999286, -467.907, 0, -388.608)
+
+[node name="tree45" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(0.315616, 0, 0.948887, 0, 1, 0, -0.948887, 0, 0.315616, -201.988, 0, -111.973)
 
 [node name="tree11" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
 transform = Transform3D(0.44779, 0, -0.894139, 0, 1, 0, 0.894139, 0, 0.44779, -62.6619, 0, -68.3738)
@@ -100,6 +148,36 @@ transform = Transform3D(-0.96207, 0, -0.272801, 0, 1, 0, 0.272801, 0, -0.96207, 
 [node name="tree18" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
 transform = Transform3D(-0.96207, 0, -0.272801, 0, 1, 0, 0.272801, 0, -0.96207, -180.624, 0, -161.175)
 
+[node name="tree46" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(-0.709472, 0, 0.704733, 0, 1, 0, -0.704733, 0, -0.709472, 461.589, 0, 98.3469)
+
+[node name="tree47" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(-0.767881, 0, -0.640592, 0, 1, 0, 0.640592, 0, -0.767881, 428.259, 0, 68.5933)
+
+[node name="tree48" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(-0.96207, 0, -0.272801, 0, 1, 0, 0.272801, 0, -0.96207, 340.376, 0, 131.825)
+
+[node name="tree49" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(-0.96207, 0, -0.272801, 0, 1, 0, 0.272801, 0, -0.96207, 252.376, 0, 66.8253)
+
+[node name="tree50" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(-0.96207, 0, -0.272801, 0, 1, 0, 0.272801, 0, -0.96207, 235.376, 0, -161.175)
+
+[node name="tree51" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(0.999994, 0, 0.00335097, 0, 1, 0, -0.00335097, 0, 0.999994, -464.472, 0, 83.6842)
+
+[node name="tree52" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(0.0900069, 0, 0.995941, 0, 1, 0, -0.995941, 0, 0.0900069, -419.865, 0, 81.1551)
+
+[node name="tree53" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(0.487387, 0, 0.873186, 0, 1, 0, -0.873186, 0, 0.487387, -402.434, 0, -25.6987)
+
+[node name="tree54" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(0.487387, 0, 0.873186, 0, 1, 0, -0.873186, 0, 0.487387, -294.247, 0, -41.9624)
+
+[node name="tree55" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(0.487387, 0, 0.873186, 0, 1, 0, -0.873186, 0, 0.487387, -121.006, 0, 107.237)
+
 [node name="tree19" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
 transform = Transform3D(-0.96207, 0, -0.272801, 0, 1, 0, 0.272801, 0, -0.96207, 155.376, 0, -161.175)
 
@@ -130,8 +208,62 @@ transform = Transform3D(-0.96207, 0, -0.272801, 0, 1, 0, 0.272801, 0, -0.96207, 
 [node name="tree28" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
 transform = Transform3D(-0.96207, 0, -0.272801, 0, 1, 0, 0.272801, 0, -0.96207, 30.3761, 0, -159.175)
 
+[node name="tree62" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(-0.820312, 0, -0.571917, 0, 1, 0, 0.571917, 0, -0.820312, 357.197, 0, -5.3738)
+
+[node name="tree63" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(-0.18841, 0, -0.982091, 0, 1, 0, 0.982091, 0, -0.18841, 306.695, 0, -20.4671)
+
+[node name="tree64" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(-0.96207, 0, -0.272801, 0, 1, 0, 0.272801, 0, -0.96207, 434.376, 0, -22.1747)
+
+[node name="tree65" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(-0.96207, 0, -0.272801, 0, 1, 0, 0.272801, 0, -0.96207, 335.376, 0, -95.175)
+
+[node name="tree66" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(-0.0851386, 0, 0.99637, 0, 1, 0, -0.99637, 0, -0.0851386, 270.67, 0, -344.061)
+
+[node name="tree67" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(-0.756311, 0, 0.654213, 0, 1, 0, -0.654213, 0, -0.756311, 308.992, 0, -380.25)
+
+[node name="tree68" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(0.244782, 0, 0.969578, 0, 1, 0, -0.969578, 0, 0.244782, 246.631, 0, -268.822)
+
+[node name="tree69" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(0.244782, 0, 0.969578, 0, 1, 0, -0.969578, 0, 0.244782, 359.351, 0, -318.058)
+
+[node name="tree70" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(0.99637, 0, 0.0851385, 0, 1, 0, -0.0851385, 0, 0.99637, 312.675, 0, 292.462)
+
+[node name="tree71" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(0.654213, 0, 0.756311, 0, 1, 0, -0.756311, 0, 0.654213, 348.863, 0, 330.784)
+
+[node name="tree72" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(0.969578, 0, -0.244782, 0, 1, 0, 0.244782, 0, 0.969578, 237.435, 0, 268.422)
+
+[node name="tree73" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(0.969578, 0, -0.244782, 0, 1, 0, 0.244782, 0, 0.969578, 286.671, 0, 381.142)
+
 [node name="tree29" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
 transform = Transform3D(-0.96207, 0, -0.272801, 0, 1, 0, 0.272801, 0, -0.96207, -145.624, 0, -51.1747)
+
+[node name="tree56" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(-0.96207, 0, -0.272801, 0, 1, 0, 0.272801, 0, -0.96207, -127.624, 0, 385.825)
+
+[node name="tree57" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(-0.96207, 0, -0.272801, 0, 1, 0, 0.272801, 0, -0.96207, -226.624, 0, 312.825)
+
+[node name="tree58" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(-0.96207, 0, -0.272801, 0, 1, 0, 0.272801, 0, -0.96207, -402.624, 0, 420.825)
+
+[node name="tree59" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(0.696777, 0, 0.717288, 0, 1, 0, -0.717288, 0, 0.696777, -428.588, 0, -222.095)
+
+[node name="tree60" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(0.696777, 0, 0.717288, 0, 1, 0, -0.717288, 0, 0.696777, -306.352, 0, -208.375)
+
+[node name="tree61" parent="Scenario/Trees" instance=ExtResource("4_by38g")]
+transform = Transform3D(0.696777, 0, 0.717288, 0, 1, 0, -0.717288, 0, 0.696777, -207.931, 0, -389.906)
 
 [node name="Maze Menu" type="Control" parent="."]
 layout_mode = 3
@@ -185,10 +317,13 @@ theme = ExtResource("6_u4vtj")
 [node name="HFlowContainer" type="HFlowContainer" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
+[node name="Maze Size HBoxContainer" type="HBoxContainer" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
 [node name="Width Label" type="Label" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("6_u4vtj")
-text = "Width"
+text = "Maze Size (X-Axis)"
 
 [node name="Width HSlider" type="HSlider" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -201,7 +336,7 @@ value = 5.0
 [node name="Height Label" type="Label" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("6_u4vtj")
-text = "Height"
+text = "Maze Size (Z-Axis)"
 
 [node name="Height HSlider" type="HSlider" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -213,20 +348,76 @@ value = 5.0
 [node name="HFlowContainer2" type="HFlowContainer" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer"]
+[node name="Wall Length HBoxContainer" type="HBoxContainer" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Generate Slowly Label" type="Label" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Wall Length Label" type="Label" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/Wall Length HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("6_u4vtj")
+text = "Wall Length"
+
+[node name="Wall Length SpinBox" type="SpinBox" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/Wall Length HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("6_u4vtj")
+min_value = 1.0
+max_value = 5.0
+value = 1.0
+
+[node name="Wall Height HBoxContainer" type="HBoxContainer" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Wall Height Label" type="Label" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/Wall Height HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("6_u4vtj")
+text = "Wall Height"
+
+[node name="Wall Height SpinBox" type="SpinBox" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/Wall Height HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("6_u4vtj")
+min_value = 1.0
+max_value = 5.0
+value = 1.0
+
+[node name="Wall Thickness HBoxContainer" type="HBoxContainer" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Wall Thickness Label" type="Label" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/Wall Thickness HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("6_u4vtj")
+text = "Wall Thickness"
+
+[node name="Wall Thickness SpinBox" type="SpinBox" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/Wall Thickness HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("6_u4vtj")
+min_value = 0.1
+max_value = 1.0
+step = 0.1
+value = 0.2
+
+[node name="HFlowContainer3" type="HFlowContainer" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Generate Slowly HBoxContainer" type="HBoxContainer" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Generate Slowly Label" type="Label" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/Generate Slowly HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme = ExtResource("6_u4vtj")
 text = "Generate Slowly"
 
-[node name="Generate Slowly CheckButton" type="CheckButton" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Generate Slowly CheckButton" type="CheckButton" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/Generate Slowly HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 theme = ExtResource("6_u4vtj")
 
-[node name="HFlowContainer3" type="HFlowContainer" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer"]
+[node name="HFlowContainer4" type="HFlowContainer" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="Generate Maze Button" type="Button" parent="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer"]
@@ -250,5 +441,8 @@ script = ExtResource("6_n6fda")
 [connection signal="item_focused" from="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/OptionButton" to="Maze Menu" method="_on_option_button_item_focused"]
 [connection signal="value_changed" from="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/Width HSlider" to="Maze Menu" method="_on_h_slider_width_value_changed"]
 [connection signal="value_changed" from="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/Height HSlider" to="Maze Menu" method="_on_h_slider_height_value_changed"]
-[connection signal="toggled" from="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/HBoxContainer/Generate Slowly CheckButton" to="Maze Menu" method="_on_generate_slowly_toggled"]
+[connection signal="value_changed" from="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/Wall Length HBoxContainer/Wall Length SpinBox" to="Maze Menu" method="_on_wall_length_spin_box_value_changed"]
+[connection signal="value_changed" from="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/Wall Height HBoxContainer/Wall Height SpinBox" to="Maze Menu" method="_on_wall_height_spin_box_value_changed"]
+[connection signal="value_changed" from="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/Wall Thickness HBoxContainer/Wall Thickness SpinBox" to="Maze Menu" method="_on_wall_thickness_spin_box_value_changed"]
+[connection signal="toggled" from="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/Generate Slowly HBoxContainer/Generate Slowly CheckButton" to="Maze Menu" method="_on_generate_slowly_toggled"]
 [connection signal="pressed" from="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/Generate Maze Button" to="Maze Menu" method="_on_generate_maze_pressed"]

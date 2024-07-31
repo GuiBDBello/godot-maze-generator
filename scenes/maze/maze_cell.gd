@@ -10,5 +10,5 @@ var grid_position_y : int
 var is_visited : bool = false
 
 
-func visit():
+func visit() -> void:
 	is_visited = true

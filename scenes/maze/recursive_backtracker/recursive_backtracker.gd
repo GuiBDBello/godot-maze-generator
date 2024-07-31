@@ -3,13 +3,12 @@ extends Node3D
 const MAZE_CELL: PackedScene = preload("res://scenes/maze/maze_cell.tscn")
 
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
-var maze_wall_length: int = 2
 
 
-func generate_maze(maze_width: int, maze_height: int, is_generated_slowly: bool) -> void:
+func generate_maze(maze_width: int, maze_height: int, maze_wall_length: int, maze_wall_height: int, maze_wall_thickness: float, is_generated_slowly: bool) -> void:
 	center_maze_on_screen(maze_width, maze_height, maze_wall_length)
 	
-	var maze_grid: Array = await generate_grid(maze_width, maze_height)
+	var maze_grid: Array = await generate_grid(maze_width, maze_height, maze_wall_length, maze_wall_height, maze_wall_thickness)
 	
 	var cell_stack: Array = []
 	
@@ -33,18 +32,45 @@ func generate_maze(maze_width: int, maze_height: int, is_generated_slowly: bool)
 				await get_tree().create_timer(0.05).timeout
 
 
-func generate_grid(width: int, height: int) -> Array:
+func center_maze_on_screen(maze_width: int, maze_height: int, maze_wall_length: int):
+	var maze_position_x: int = ((maze_width * maze_wall_length) - 1)
+	var maze_position_z: int = ((maze_height * maze_wall_length) - 1)
+	
+	self.set_position(Vector3(-maze_position_x, 0, -maze_position_z))
+
+
+func generate_grid(width: int, height: int, wall_length: int, wall_height: int, wall_thickness: float) -> Array:
 	var grid: Array = []
 	for x: int in width:
 		grid.append([])
 		for y in height:
 			var cell: Node3D = MAZE_CELL.instantiate()
 			cell.name = str("Maze Cell ", x, "-", y)
-			cell.position = Vector3(x * maze_wall_length, 0, y * maze_wall_length)
+			cell.position = Vector3(x * wall_length * 2, 0, y * wall_length * 2)
 			cell.grid_position_x = x
 			cell.grid_position_y = y
 			grid[x].append(cell)
 			self.add_child(cell)
+			
+			cell.wall_north.scale.x = wall_length
+			cell.wall_south.scale.x = wall_length
+			cell.wall_east.scale.x = wall_length
+			cell.wall_west.scale.x = wall_length
+			
+			cell.wall_north.position.z = -wall_length
+			cell.wall_south.position.z = wall_length
+			cell.wall_east.position.x = wall_length
+			cell.wall_west.position.x = -wall_length
+			
+			cell.wall_north.scale.y = wall_height
+			cell.wall_south.scale.y = wall_height
+			cell.wall_east.scale.y = wall_height
+			cell.wall_west.scale.y = wall_height
+			
+			cell.wall_north.scale.z = wall_thickness
+			cell.wall_south.scale.z = wall_thickness
+			cell.wall_east.scale.z = wall_thickness
+			cell.wall_west.scale.z = wall_thickness
 			
 	return grid
 
@@ -107,10 +133,3 @@ func remove_walls_between(current_cell: Node3D, current_neighbour: Node3D) -> vo
 		current_cell.wall_south.queue_free()
 		current_neighbour.wall_north.queue_free()
 		current_neighbour.visit()
-
-
-func center_maze_on_screen(maze_width: int, maze_height: int, maze_wall_length: int):
-	var maze_position_x: int = (((maze_width * maze_wall_length) / 2) - 1)
-	var maze_position_z: int = (((maze_height * maze_wall_length) / 2) - 1)
-	
-	self.set_position(Vector3(-maze_position_x, 0, -maze_position_z))
