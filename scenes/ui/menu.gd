@@ -1,24 +1,49 @@
 extends Control
 
 @onready var game = $".."
-@onready var option_button: OptionButton = $MarginContainerBack/MarginContainer/VBoxContainer/OptionButton
+@onready var algorithm_option_button: OptionButton = $"MarginContainerBack/MarginContainer/VBoxContainer/Algorithm OptionButton"
+@onready var width_h_slider: HSlider = $"MarginContainerBack/MarginContainer/VBoxContainer/Width HSlider"
+@onready var height_h_slider: HSlider = $"MarginContainerBack/MarginContainer/VBoxContainer/Height HSlider"
+@onready var wall_length_spin_box: SpinBox = $"MarginContainerBack/MarginContainer/VBoxContainer/Wall Length HBoxContainer/Wall Length SpinBox"
+@onready var wall_height_spin_box: SpinBox = $"MarginContainerBack/MarginContainer/VBoxContainer/Wall Height HBoxContainer/Wall Height SpinBox"
+@onready var wall_thickness_spin_box: SpinBox = $"MarginContainerBack/MarginContainer/VBoxContainer/Wall Thickness HBoxContainer/Wall Thickness SpinBox"
+@onready var generate_slowly_check_button: CheckButton = $"MarginContainerBack/MarginContainer/VBoxContainer/Generate Slowly HBoxContainer/Generate Slowly CheckButton"
 
-var maze_width: int = 5
-var maze_height: int = 5
-var maze_wall_length: int = 1
-var maze_wall_height: int = 1
-var maze_wall_thickness: float = 0.2
-var is_generated_slowly: bool = false
+var initial_maze_width: int
+var initial_maze_height: int
+var initial_maze_wall_length: int
+var initial_maze_wall_height: int
+var initial_maze_wall_thickness: float
+var initial_is_generated_slowly: bool
+
+var maze_width: int
+var maze_height: int
+var maze_wall_length: int
+var maze_wall_height: int
+var maze_wall_thickness: float
+var is_generated_slowly: bool
 
 
 func _ready() -> void:
 	for algorithm : PackedScene in game.maze_generation_algorithms:
-		option_button.add_item(algorithm._bundled.get("names")[0])
+		algorithm_option_button.add_item(algorithm._bundled.get("names")[0])
+
+	initial_maze_width = width_h_slider.value
+	initial_maze_height = height_h_slider.value
+	initial_maze_wall_length = wall_length_spin_box.value
+	initial_maze_wall_height = wall_height_spin_box.value
+	initial_maze_wall_thickness = wall_thickness_spin_box.value
+	initial_is_generated_slowly = generate_slowly_check_button.button_pressed
+	
+	reset_values()
 
 
 func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("reset_values"):
+		reset_values()
 	if Input.is_action_just_pressed("generate_maze"):
-		await game.generate_maze(maze_width, maze_height, is_generated_slowly)
+		var maze: Maze = Maze.new_maze(maze_width, maze_height, maze_wall_length, maze_wall_height, maze_wall_thickness)
+		await game.generate_maze(maze, is_generated_slowly)
 	if Input.is_action_just_pressed("toggle_menu_visible"):
 		self.visible = !self.visible
 
@@ -52,4 +77,21 @@ func _on_generate_slowly_toggled(toggled_on: bool) -> void:
 
 
 func _on_generate_maze_pressed() -> void:
-	await game.generate_maze(maze_width, maze_height, maze_wall_length, maze_wall_height, maze_wall_thickness, is_generated_slowly)
+	var maze: Maze = Maze.new_maze(maze_width, maze_height, maze_wall_length, maze_wall_height, maze_wall_thickness)
+	await game.generate_maze(maze, is_generated_slowly)
+
+
+func reset_values() -> void:
+	maze_width = initial_maze_width
+	maze_height = initial_maze_height
+	maze_wall_length = initial_maze_wall_length
+	maze_wall_height = initial_maze_wall_height
+	maze_wall_thickness = initial_maze_wall_thickness
+	is_generated_slowly = initial_is_generated_slowly
+	
+	width_h_slider.value = initial_maze_width
+	height_h_slider.value = initial_maze_height
+	wall_length_spin_box.value = initial_maze_wall_length
+	wall_height_spin_box.value = initial_maze_wall_height
+	wall_thickness_spin_box.value = initial_maze_wall_thickness
+	generate_slowly_check_button.button_pressed = initial_is_generated_slowly
