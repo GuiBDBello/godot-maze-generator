@@ -48,7 +48,7 @@ func _input(event: InputEvent) -> void:
 		self.visible = !self.visible
 
 
-func _on_option_button_item_focused(index: int) -> void:
+func _on_algorithm_option_button_item_selected(index: int) -> void:
 	game.change_algorithm(index)
 
 

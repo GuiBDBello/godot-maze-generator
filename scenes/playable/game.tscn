@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://b5ptabdfgohvv"]
+[gd_scene load_steps=14 format=3 uid="uid://b5ptabdfgohvv"]
 
 [ext_resource type="Script" path="res://scenes/playable/game.gd" id="1_fpj1e"]
-[ext_resource type="PackedScene" uid="uid://c2vh3d2n372po" path="res://scenes/maze/recursive_backtracker/recursive_backtracker.tscn" id="2_t4y1x"]
+[ext_resource type="PackedScene" uid="uid://c2vh3d2n372po" path="res://scenes/maze/maze_generator/recursive_backtracker/recursive_backtracker.tscn" id="2_t4y1x"]
 [ext_resource type="Shader" path="res://shaders/sky.gdshader" id="2_twyl1"]
+[ext_resource type="PackedScene" uid="uid://cc3km6e3rn7ns" path="res://scenes/maze/maze_generator/aldous_broder/aldous_broder.tscn" id="3_6krv0"]
 [ext_resource type="PackedScene" uid="uid://cn4at1gn2s34f" path="res://assets/ground/ground.glb" id="3_mq8d8"]
 [ext_resource type="PackedScene" uid="uid://rc8rnxx07fri" path="res://assets/tree/tree.glb" id="4_by38g"]
 [ext_resource type="Script" path="res://scenes/ui/menu.gd" id="5_cs4tl"]
@@ -29,7 +30,7 @@ bg_color = Color(0.45098, 0.54902, 0.870588, 0.490196)
 
 [node name="Game" type="Node"]
 script = ExtResource("1_fpj1e")
-maze_generation_algorithms = Array[PackedScene]([ExtResource("2_t4y1x")])
+maze_generation_algorithms = Array[PackedScene]([ExtResource("2_t4y1x"), ExtResource("3_6krv0")])
 
 [node name="Scenario" type="Node" parent="."]
 
@@ -435,7 +436,7 @@ margin = 0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.53674e-07, 10)
 script = ExtResource("6_n6fda")
 
-[connection signal="item_focused" from="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/Algorithm OptionButton" to="Maze Menu" method="_on_option_button_item_focused"]
+[connection signal="item_selected" from="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/Algorithm OptionButton" to="Maze Menu" method="_on_algorithm_option_button_item_selected"]
 [connection signal="value_changed" from="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/Width HSlider" to="Maze Menu" method="_on_h_slider_width_value_changed"]
 [connection signal="value_changed" from="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/Height HSlider" to="Maze Menu" method="_on_h_slider_height_value_changed"]
 [connection signal="value_changed" from="Maze Menu/MarginContainerBack/MarginContainer/VBoxContainer/Wall Length HBoxContainer/Wall Length SpinBox" to="Maze Menu" method="_on_wall_length_spin_box_value_changed"]
