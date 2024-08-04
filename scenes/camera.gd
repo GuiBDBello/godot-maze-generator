@@ -34,4 +34,4 @@ func zoom(event) -> void:
 	if event.button_index == MOUSE_BUTTON_WHEEL_DOWN and event.pressed:
 		spring_arm.spring_length += 0.1 * spring_arm.spring_length if spring_arm.spring_length > 10 else 1
 	
-	spring_arm.spring_length = clamp(spring_arm.spring_length, 5, 500)
+	spring_arm.spring_length = clamp(spring_arm.spring_length, 15, 500)
