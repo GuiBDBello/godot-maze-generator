@@ -1,4 +1,4 @@
-extends Node3D
+class_name MazeCell extends Node3D
 
 @onready var wall_north: MeshInstance3D = $"Wall North"
 @onready var wall_south: MeshInstance3D = $"Wall South"

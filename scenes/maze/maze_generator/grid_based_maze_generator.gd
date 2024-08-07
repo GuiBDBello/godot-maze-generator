@@ -30,7 +30,25 @@ func randomize_start_position(maze_grid: Array, maze_width: int, maze_height: in
 	return maze_grid[maze_start_position_width][maze_start_position_height]
 
 
-func get_random_neighbour(cell_neighbours: Array) -> Node3D:
+func get_neighbours(current_cell: Node3D, maze_grid: Array) -> Array:
+	var neighbours: Array = []
+	
+	if current_cell.grid_position_x > 0:
+		neighbours.push_back(maze_grid[current_cell.grid_position_x - 1][current_cell.grid_position_y])
+	
+	if current_cell.grid_position_x < maze_grid.size() - 1:
+		neighbours.push_back(maze_grid[current_cell.grid_position_x + 1][current_cell.grid_position_y])
+	
+	if current_cell.grid_position_y > 0:
+		neighbours.push_back(maze_grid[current_cell.grid_position_x][current_cell.grid_position_y - 1])
+	
+	if current_cell.grid_position_y < maze_grid[current_cell.grid_position_x].size() - 1:
+		neighbours.push_back(maze_grid[current_cell.grid_position_x][current_cell.grid_position_y + 1])
+		
+	return neighbours
+
+
+func get_random_neighbour_from_array(cell_neighbours: Array) -> Node3D:
 	var neighbour_position: int = rng.randi_range(0, cell_neighbours.size() - 1)
 	return cell_neighbours[neighbour_position]
 

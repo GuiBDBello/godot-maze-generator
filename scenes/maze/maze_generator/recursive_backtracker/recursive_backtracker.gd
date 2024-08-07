@@ -19,7 +19,7 @@ func generate_maze(maze: Maze, is_generated_slowly: bool) -> void:
 		if not unvisited_neighbours.is_empty():
 			cell_stack.push_back(current_cell)
 			
-			var current_neighbour: Node3D = super.get_random_neighbour(unvisited_neighbours)
+			var current_neighbour: Node3D = super.get_random_neighbour_from_array(unvisited_neighbours)
 			super.remove_walls_between(current_cell, current_neighbour)
 			current_neighbour.visit()
 			cell_stack.push_back(current_neighbour)

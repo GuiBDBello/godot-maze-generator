@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://b5ptabdfgohvv"]
+[gd_scene load_steps=16 format=3 uid="uid://b5ptabdfgohvv"]
 
 [ext_resource type="Script" path="res://scenes/playable/game.gd" id="1_fpj1e"]
 [ext_resource type="PackedScene" uid="uid://c2vh3d2n372po" path="res://scenes/maze/maze_generator/recursive_backtracker/recursive_backtracker.tscn" id="2_t4y1x"]
 [ext_resource type="Shader" path="res://shaders/sky.gdshader" id="2_twyl1"]
 [ext_resource type="PackedScene" uid="uid://cc3km6e3rn7ns" path="res://scenes/maze/maze_generator/aldous_broder/aldous_broder.tscn" id="3_6krv0"]
+[ext_resource type="PackedScene" uid="uid://bu4p41yghtvlt" path="res://scenes/maze/maze_generator/wilson/wilson.tscn" id="3_shqtx"]
 [ext_resource type="PackedScene" uid="uid://rc8rnxx07fri" path="res://assets/tree/tree.glb" id="4_by38g"]
 [ext_resource type="Script" path="res://scenes/ui/menu.gd" id="5_cs4tl"]
 [ext_resource type="Material" uid="uid://mj1x6sllquif" path="res://resources/ground.tres" id="5_e5l3x"]
@@ -36,7 +37,7 @@ bg_color = Color(0.45098, 0.54902, 0.870588, 0.490196)
 
 [node name="Game" type="Node"]
 script = ExtResource("1_fpj1e")
-maze_generation_algorithms = Array[PackedScene]([ExtResource("2_t4y1x"), ExtResource("3_6krv0")])
+maze_generation_algorithms = Array[PackedScene]([ExtResource("3_6krv0"), ExtResource("2_t4y1x"), ExtResource("3_shqtx")])
 
 [node name="Scenario" type="Node" parent="."]
 
