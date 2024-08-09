@@ -17,7 +17,7 @@ func change_algorithm(index: int) -> void:
 
 
 func generate_maze(maze: Maze, is_generated_slowly: bool) -> void:
-	var time_start = Time.get_ticks_msec()
+	var time_start: int = Time.get_ticks_msec()
 	
 	if maze_generator != null:
 		maze_generator.queue_free()
@@ -26,8 +26,8 @@ func generate_maze(maze: Maze, is_generated_slowly: bool) -> void:
 	maze_generator = selected_algorithm.instantiate()
 	maze_generator.name = "Maze Generator"
 	self.add_child(maze_generator)
-	maze_generator.generate_maze(maze, is_generated_slowly)
+	await maze_generator.generate_maze(maze, is_generated_slowly)
 	
-	var time_now = Time.get_ticks_msec()
-	var time_elapsed = time_now - time_start
+	var time_now: int = Time.get_ticks_msec()
+	var time_elapsed: int = time_now - time_start
 	print(str("Generation Time: ", time_elapsed, "ms"))

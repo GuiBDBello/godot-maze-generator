@@ -7,7 +7,6 @@ extends Camera3D
 
 
 func _input(event):
-	# Left Mouse Button
 	if event is InputEventMouseMotion and (\
 			event.button_mask == MOUSE_BUTTON_MASK_LEFT or\
 			event.button_mask == MOUSE_BUTTON_MASK_MIDDLE or\
