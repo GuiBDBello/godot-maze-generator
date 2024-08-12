@@ -1,19 +1,53 @@
 extends MazeGenerator
 
+var cell_list: Array[Array] = []
 
-const MAZE_WALL: PackedScene = preload("res://scenes/maze/maze_wall.tscn")
+var cell_sets: Dictionary = {}
+
+
+func _ready() -> void:
+	rng.randomize()
 
 
 func generate_maze(maze: Maze, is_generated_slowly: bool) -> void:
-	var wall_list: Array = generate_wall_list(maze.width, maze.height)
+	super.center_maze_on_screen(maze)
+	
+	var maze_grid: Array[Array] = super.generate_grid(maze)
+	
+	for x: int in maze_grid.size():
+		for y: int in maze_grid[x].size():
+			var cell: MazeCell = maze_grid[x][y]
+			
+			# Generate the walls between cells
+			var neighbours: Array[MazeCell] = super.find_neighbours(cell, maze_grid)
+			for neighbour: MazeCell in neighbours:
+				cell_list.append([cell, neighbour])
+			
+			# Initialize sets for each cell
+			cell_sets[cell] = cell
+	
+	cell_list.shuffle()
+	
+	for cell in cell_list:
+		var current_cell: MazeCell = cell[0]
+		var neighbour: MazeCell = cell[1]
+		
+		if self.find_set(current_cell) != self.find_set(neighbour):
+			super.remove_walls_between(current_cell, neighbour)
+			self.join_cell_sets(current_cell, neighbour)
+			
+			if is_generated_slowly:
+				await get_tree().create_timer(0.05).timeout
 
 
-func generate_wall_list(width: int, height: int) -> Array:
-	var wall_list: Array = []
-	
-	var maze_size: int = width * height
-	for i: int in maze_size:
-		var maze_wall = MAZE_WALL.instantiate()
-		wall_list.push_back(maze_wall)
-	
-	return wall_list
+func find_set(cell: MazeCell) -> MazeCell:
+	if cell_sets[cell] != cell:
+		cell_sets[cell] = self.find_set(cell_sets[cell])
+	return cell_sets[cell]
+
+
+func join_cell_sets(cell: MazeCell, neighbour: MazeCell) -> void:
+	var cell1: MazeCell = self.find_set(cell)
+	var cell2: MazeCell = self.find_set(neighbour)
+	if cell1 != cell2:
+		cell_sets[cell2] = cell1

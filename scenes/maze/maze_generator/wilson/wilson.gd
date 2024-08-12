@@ -2,20 +2,20 @@ extends MazeGenerator
 
 
 func generate_maze(maze: Maze, is_generated_slowly: bool) -> void:
-	super.center_maze_on_screen(maze.width, maze.height, maze.wall_length)
+	super.center_maze_on_screen(maze)
 	
 	var maze_grid: Array[Array] = super.generate_grid(maze)
 	
 	var unvisited_cell_amount: int = maze.width * maze.height
 	
-	var initial_cell: MazeCell = super.get_random_cell(maze_grid, maze.width, maze.height)
+	var initial_cell: MazeCell = super.get_random_cell(maze_grid)
 	initial_cell.visit()
 	unvisited_cell_amount -= 1
 	
 	while unvisited_cell_amount > 0:
-		var current_cell: MazeCell = super.get_random_cell(maze_grid, maze.width, maze.height)
+		var current_cell: MazeCell = super.get_random_cell(maze_grid)
 		while current_cell.is_visited:
-			current_cell = super.get_random_cell(maze_grid, maze.width, maze.height)
+			current_cell = super.get_random_cell(maze_grid)
 		
 		var cell_neighbours: Array = super.find_neighbours(current_cell, maze_grid)
 		var current_neighbour: MazeCell = cell_neighbours.pick_random()

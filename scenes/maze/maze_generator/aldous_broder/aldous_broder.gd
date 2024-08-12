@@ -2,11 +2,11 @@ extends MazeGenerator
 
 
 func generate_maze(maze: Maze, is_generated_slowly: bool) -> void:
-	super.center_maze_on_screen(maze.width, maze.height, maze.wall_length)
+	super.center_maze_on_screen(maze)
 	
 	var maze_grid: Array[Array] = super.generate_grid(maze)
 	
-	var current_cell: MazeCell = super.get_random_cell(maze_grid, maze.width, maze.height)
+	var current_cell: MazeCell = super.get_random_cell(maze_grid)
 	current_cell.visit()
 	
 	var unvisited_cell_amount: int = (maze.width * maze.height) - 1

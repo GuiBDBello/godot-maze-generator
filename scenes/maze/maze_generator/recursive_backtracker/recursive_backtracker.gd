@@ -2,13 +2,13 @@ extends MazeGenerator
 
 
 func generate_maze(maze: Maze, is_generated_slowly: bool) -> void:
-	super.center_maze_on_screen(maze.width, maze.height, maze.wall_length)
+	super.center_maze_on_screen(maze)
 	
 	var maze_grid: Array[Array] = await super.generate_grid(maze)
 	
 	var cell_stack: Array[MazeCell] = []
 	
-	var initial_cell: MazeCell = super.get_random_cell(maze_grid, maze.width, maze.height)
+	var initial_cell: MazeCell = super.get_random_cell(maze_grid)
 	initial_cell.visit()
 	cell_stack.push_back(initial_cell)
 	
