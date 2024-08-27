@@ -38,8 +38,8 @@ func generate_maze(maze: Maze, is_generated_slowly: bool) -> void:
 
 
 func hunt_for_next_cell(maze_grid: Array[Array]) -> MazeCell:
-	for y: int in range(maze_grid.size()):
-		for x: int in range(maze_grid[y].size()):
+	for x: int in range(maze_grid.size()):
+		for y: int in range(maze_grid[x].size()):
 			var cell: MazeCell = maze_grid[x][y]
 			if not cell.is_visited:
 				var neighbours: Array[MazeCell] = super.find_neighbours(cell, maze_grid)
@@ -48,18 +48,3 @@ func hunt_for_next_cell(maze_grid: Array[Array]) -> MazeCell:
 						super.remove_walls_between(cell, neighbour)
 						return cell
 	return null
-
-
-func remove_walls_between(cell1: MazeCell, cell2: MazeCell) -> void:
-	if cell1.grid_position_x < cell2.grid_position_x:
-		cell1.wall_east.queue_free()
-		cell2.wall_west.queue_free()
-	elif cell1.grid_position_x > cell2.grid_position_x:
-		cell1.wall_west.queue_free()
-		cell2.wall_east.queue_free()
-	elif cell1.grid_position_y < cell2.grid_position_y:
-		cell1.wall_south.queue_free()
-		cell2.wall_north.queue_free()
-	elif cell1.grid_position_y > cell2.grid_position_y:
-		cell1.wall_north.queue_free()
-		cell2.wall_south.queue_free()

@@ -1,10 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://b5ptabdfgohvv"]
+[gd_scene load_steps=21 format=3 uid="uid://b5ptabdfgohvv"]
 
 [ext_resource type="Script" path="res://scenes/playable/game.gd" id="1_fpj1e"]
 [ext_resource type="PackedScene" uid="uid://82b172eq2ayj" path="res://scenes/maze/maze_generator/randomized_kruskal/randomized_kruskal.tscn" id="2_qtd5j"]
 [ext_resource type="PackedScene" uid="uid://c2vh3d2n372po" path="res://scenes/maze/maze_generator/recursive_backtracker/recursive_backtracker.tscn" id="2_t4y1x"]
 [ext_resource type="Shader" path="res://shaders/sky.gdshader" id="2_twyl1"]
 [ext_resource type="PackedScene" uid="uid://cc3km6e3rn7ns" path="res://scenes/maze/maze_generator/aldous_broder/aldous_broder.tscn" id="3_6krv0"]
+[ext_resource type="PackedScene" uid="uid://cifdy21e5if2a" path="res://scenes/maze/maze_generator/binary_tree/binary_tree.tscn" id="3_8cen6"]
 [ext_resource type="PackedScene" uid="uid://c82tyr8blvkd4" path="res://scenes/maze/maze_generator/growing_tree/growing_tree.tscn" id="3_dpr5q"]
 [ext_resource type="PackedScene" uid="uid://bu4p41yghtvlt" path="res://scenes/maze/maze_generator/wilson/wilson.tscn" id="3_shqtx"]
 [ext_resource type="PackedScene" uid="uid://dijfp5dwsy1st" path="res://scenes/maze/maze_generator/hunt_and_kill/hunt_and_kill.tscn" id="3_ttew8"]
@@ -41,7 +42,7 @@ bg_color = Color(0.45098, 0.54902, 0.870588, 0.490196)
 
 [node name="Game" type="Node"]
 script = ExtResource("1_fpj1e")
-maze_generation_algorithms = Array[PackedScene]([ExtResource("3_6krv0"), ExtResource("3_dpr5q"), ExtResource("3_ttew8"), ExtResource("2_qtd5j"), ExtResource("6_wse3y"), ExtResource("2_t4y1x"), ExtResource("3_shqtx")])
+maze_generation_algorithms = Array[PackedScene]([ExtResource("3_6krv0"), ExtResource("3_8cen6"), ExtResource("3_dpr5q"), ExtResource("3_ttew8"), ExtResource("2_qtd5j"), ExtResource("6_wse3y"), ExtResource("2_t4y1x"), ExtResource("3_shqtx")])
 
 [node name="Scenario" type="Node" parent="."]
 
