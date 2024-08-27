@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c82tyr8blvkd4"]
+
+[ext_resource type="Script" path="res://scenes/maze/maze_generator/growing_tree/growing_tree.gd" id="1_gbr66"]
+
+[node name="Growing Tree" type="Node3D"]
+script = ExtResource("1_gbr66")
