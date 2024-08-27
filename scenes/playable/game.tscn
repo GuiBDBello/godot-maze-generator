@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b5ptabdfgohvv"]
+[gd_scene load_steps=18 format=3 uid="uid://b5ptabdfgohvv"]
 
 [ext_resource type="Script" path="res://scenes/playable/game.gd" id="1_fpj1e"]
 [ext_resource type="PackedScene" uid="uid://82b172eq2ayj" path="res://scenes/maze/maze_generator/randomized_kruskal/randomized_kruskal.tscn" id="2_qtd5j"]
@@ -11,6 +11,7 @@
 [ext_resource type="Material" uid="uid://mj1x6sllquif" path="res://resources/ground.tres" id="5_e5l3x"]
 [ext_resource type="Script" path="res://scenes/camera.gd" id="6_n6fda"]
 [ext_resource type="Theme" uid="uid://h6sur28uuqjw" path="res://resources/ui_theme.tres" id="6_u4vtj"]
+[ext_resource type="PackedScene" uid="uid://dq28qhswq7f1a" path="res://scenes/maze/maze_generator/randomized_prim/randomized_prim.tscn" id="6_wse3y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6dqnt"]
 shader = ExtResource("2_twyl1")
@@ -38,7 +39,7 @@ bg_color = Color(0.45098, 0.54902, 0.870588, 0.490196)
 
 [node name="Game" type="Node"]
 script = ExtResource("1_fpj1e")
-maze_generation_algorithms = Array[PackedScene]([ExtResource("3_6krv0"), ExtResource("2_qtd5j"), ExtResource("2_t4y1x"), ExtResource("3_shqtx")])
+maze_generation_algorithms = Array[PackedScene]([ExtResource("3_6krv0"), ExtResource("2_qtd5j"), ExtResource("6_wse3y"), ExtResource("2_t4y1x"), ExtResource("3_shqtx")])
 
 [node name="Scenario" type="Node" parent="."]
 

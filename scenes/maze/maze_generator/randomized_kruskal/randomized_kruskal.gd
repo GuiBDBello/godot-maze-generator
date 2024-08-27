@@ -1,7 +1,6 @@
 extends MazeGenerator
 
 var cell_list: Array[Array] = []
-
 var cell_sets: Dictionary = {}
 
 
@@ -18,12 +17,10 @@ func generate_maze(maze: Maze, is_generated_slowly: bool) -> void:
 		for y: int in maze_grid[x].size():
 			var cell: MazeCell = maze_grid[x][y]
 			
-			# Generate the walls between cells
 			var neighbours: Array[MazeCell] = super.find_neighbours(cell, maze_grid)
 			for neighbour: MazeCell in neighbours:
 				cell_list.append([cell, neighbour])
 			
-			# Initialize sets for each cell
 			cell_sets[cell] = cell
 	
 	cell_list.shuffle()
