@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dijfp5dwsy1st"]
+
+[ext_resource type="Script" path="res://scenes/maze/maze_generator/hunt_and_kill/hunt_and_kill.gd" id="1_r5mgt"]
+
+[node name="Hunt and Kill" type="Node3D"]
+script = ExtResource("1_r5mgt")

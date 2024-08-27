@@ -25,7 +25,7 @@ func generate_maze(maze: Maze, is_generated_slowly: bool) -> void:
 	
 	cell_list.shuffle()
 	
-	for cell in cell_list:
+	for cell: Array[MazeCell] in cell_list:
 		var current_cell: MazeCell = cell[0]
 		var neighbour: MazeCell = cell[1]
 		
