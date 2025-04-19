@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cifdy21e5if2a"]
 
-[ext_resource type="Script" path="res://scenes/maze/maze_generator/binary_tree/binary_tree.gd" id="1_hebk5"]
+[ext_resource type="Script" uid="uid://fx3ls6x06qix" path="res://scenes/maze/maze_generator/binary_tree/binary_tree.gd" id="1_hebk5"]
 
 [node name="Binary Tree" type="Node3D"]
 script = ExtResource("1_hebk5")

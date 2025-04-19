@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cc3km6e3rn7ns"]
 
-[ext_resource type="Script" path="res://scenes/maze/maze_generator/aldous_broder/aldous_broder.gd" id="1_3sv5p"]
+[ext_resource type="Script" uid="uid://jub3nuniperk" path="res://scenes/maze/maze_generator/aldous_broder/aldous_broder.gd" id="1_3sv5p"]
 
 [node name="Aldous-Broder" type="Node3D"]
 script = ExtResource("1_3sv5p")

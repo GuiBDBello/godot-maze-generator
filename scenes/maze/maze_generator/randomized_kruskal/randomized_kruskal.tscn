@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://82b172eq2ayj"]
 
-[ext_resource type="Script" path="res://scenes/maze/maze_generator/randomized_kruskal/randomized_kruskal.gd" id="1_73oj2"]
+[ext_resource type="Script" uid="uid://d2flmot3yg4xn" path="res://scenes/maze/maze_generator/randomized_kruskal/randomized_kruskal.gd" id="1_73oj2"]
 
 [node name="Randomized Kruskal" type="Node3D"]
 script = ExtResource("1_73oj2")

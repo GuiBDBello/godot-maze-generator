@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dq28qhswq7f1a"]
 
-[ext_resource type="Script" path="res://scenes/maze/maze_generator/randomized_prim/randomized_prim.gd" id="1_iii6r"]
+[ext_resource type="Script" uid="uid://cat1bko31efwd" path="res://scenes/maze/maze_generator/randomized_prim/randomized_prim.gd" id="1_iii6r"]
 
 [node name="Randomized Prim" type="Node3D"]
 script = ExtResource("1_iii6r")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cqimg2cgxleoh"]
 
-[ext_resource type="Script" path="res://scenes/maze/maze_generator/sidewinder/sidewinder.gd" id="1_fo5rl"]
+[ext_resource type="Script" uid="uid://c6adtychnt0y8" path="res://scenes/maze/maze_generator/sidewinder/sidewinder.gd" id="1_fo5rl"]
 
 [node name="Sidewinder" type="Node3D"]
 script = ExtResource("1_fo5rl")
